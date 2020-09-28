@@ -1,0 +1,7 @@
+<mat-card *ngFor="let guide of list | slice:0:2">
+    <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{guide.name}}</mat-card-title>
+    <mat-card-subtitle>place:{{guide.place}}</mat-card-subtitle>
+   </mat-card-header>
+</mat-card>

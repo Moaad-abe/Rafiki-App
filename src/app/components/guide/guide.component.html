@@ -1,0 +1,58 @@
+<form>
+    <mat-card>
+        <mat-card-title>Basic Guide Information</mat-card-title>
+        <mat-form-field>
+            <input matInput placeholder="Guide Name" name="name" [(ngModel)]="guide.name">
+        </mat-form-field>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>Place Information</mat-card-title>
+        <mat-form-field>
+            <input matInput placeholder="Guide Place" name="Place" [(ngModel)]="guide.place">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Address" name="address" [(ngModel)]="guide.location.address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" name="city" [(ngModel)]="guide.location.city">
+        </mat-form-field>
+    </mat-card>
+    
+<mat-card>
+    <mat-card-title>Ratings</mat-card-title>
+    <mat-card-subtitle>Overall Rating</mat-card-subtitle>
+    <mat-slider max="10" thumbLabel name="rating"
+     [(ngModel)]="guide.rating" tickInterval="1"></mat-slider>
+     <mat-card-subtitle>
+     <mat-slide-toggle #guideSelctor 
+     (change)="guideRatingChanged(guideSelctor.checked)">Guide Rating</mat-slide-toggle>
+    </mat-card-subtitle>
+     <section id="guideRating" *ngIf="guideSelctor.checked">
+        <label>availability</label>
+       <mat-slider max="10" thumbLabel name="availabilityRating"
+    [(ngModel)]="guide.guideRating.availability" tickInterval="1">
+    </mat-slider>
+    <label>experience</label>
+    <mat-slider max="10" thumbLabel name="experienceRating"
+    [(ngModel)]="guide.guideRating.experience" tickInterval="1">
+    </mat-slider>
+    <label>knowledge</label>
+    <mat-slider max="10" thumbLabel name="knowledgeRating"
+    [(ngModel)]="guide.guideRating.knowledge" tickInterval="1">
+    </mat-slider>
+    </section>
+</mat-card>
+<mat-card>
+    <mat-form-field>
+        <textarea matInput placeholder="Notes" name="notes" [(ngModel)]="guide.notes">
+        </textarea>
+    </mat-form-field>
+</mat-card>
+</form>
+<mat-card>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+</mat-card>
+<!-- <mat-card>
+    {{guide|json}}
+</mat-card> -->

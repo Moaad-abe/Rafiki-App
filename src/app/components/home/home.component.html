@@ -1,0 +1,123 @@
+<div *ngIf="showRafiki" class="mt-1">
+    <img src="assets/icons/Rafiki.png" 
+    class="img-fluid" alt="Responsive image">
+    <P class="ml-1 p-3">Don’t dawdle. HURRY UP!</P>
+</div>
+<div *ngIf="!showRafiki">
+    <button mat-raised-button (click)="isEditable = !isEditable">
+        {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+    </button>
+
+    <mat-vertical-stepper #stepper>
+        <!-- #docregion editable -->
+        <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+            <!-- #enddocregion editable -->
+            <form [formGroup]="firstFormGroup">
+                <!-- #docregion ng-template -->
+                <ng-template matStepLabel>Where Are You Flying ?</ng-template>
+                <!-- #enddocregion ng-template -->
+                <app-search ></app-search>
+            </form>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill Out Your Requirements</ng-template>
+                <mat-selection-list #requirements formControlName="secondCtrl">
+                    <mat-list-option *ngFor="let requirement of typesOfRequierments">
+                        {{requirement}}
+                    </mat-list-option>
+                </mat-selection-list>
+
+                <p>
+                    Options selected: {{requirements.selectedOptions.selected.length}}
+                </p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="therdFormGroup" [editable]="isEditable">
+            <form [formGroup]="therdFormGroup">
+                <ng-template matStepLabel>Guide Features</ng-template>
+                <mat-selection-list #features formControlName="therdCtrl">
+                    <mat-list-option *ngFor="let feature of typesOfFeatures">
+                        {{feature}}
+                    </mat-list-option>
+                </mat-selection-list>
+
+                <p>
+                    Options selected: {{features.selectedOptions.selected.length}}
+                </p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext (click)="getData()">Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="fourFormGroup" [editable]="isEditable">
+            <form [formGroup]="fourFormGroup">
+                <ng-template matStepLabel>Matching</ng-template>
+                <div *ngIf="showSpinner">
+                    <mat-spinner></mat-spinner>
+                </div>
+                <p *ngIf="!showSpinner">We Found {{num1}} Guides For You Sir :)</p>
+
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="fiveFormGroup" [editable]="isEditable">
+            <form >
+                <ng-template matStepLabel >Selection</ng-template>
+                <app-sub-list></app-sub-list>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="sixFormGroup" [editable]="isEditable">
+            <form [formGroup]="sixFormGroup">
+                <ng-template matStepLabel>Payment</ng-template>
+                <mat-form-field>
+                    <mat-label>Card Number</mat-label>
+                    <input matInput formControlName="sixCtrl" placeholder="Card Number" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Expiry Date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>CCV</mat-label>
+                    <input matInput formControlName="sixCtrl" placeholder="CCV" required>
+                </mat-form-field>
+                <button mat-button  (click)="getData()">Pay</button>
+                <div *ngIf="showSpinner">
+                    <mat-spinner ></mat-spinner>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>Final Report – Guides Details Report</p>
+            <button mat-raised-button color="accent" [routerLink]="['/list']" routerLinkActive="router-link-active" >Go To Full List</button>
+            <br>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>

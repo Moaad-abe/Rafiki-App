@@ -1,0 +1,14 @@
+<mat-card *ngFor="let guide of list">
+    <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{guide.name}}</mat-card-title>
+    <mat-card-subtitle>place:{{guide.place}}</mat-card-subtitle>
+   </mat-card-header>
+    <mat-card-actions>
+        <button mat-button (click)="goMap(guide)"><mat-icon>map</mat-icon>
+        </button>
+        <button mat-button (click)="share(guide)"><mat-icon>share</mat-icon></button>
+        <button mat-button><mat-icon>list</mat-icon></button>
+    </mat-card-actions>
+</mat-card>
+<a id="btnCreat" mat-fab [routerLink]="['/guide']" ><mat-icon>create</mat-icon></a>

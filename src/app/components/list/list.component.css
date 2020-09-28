@@ -1,0 +1,11 @@
+#btnCreat{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.header-image {
+    background-image: url('/assets/icons/profile-placeholder.png');
+    background-size: cover;
+  }
+

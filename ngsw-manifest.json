@@ -1,0 +1,57 @@
+{
+    "routing":{
+        "index":"/index.html",
+        "routes":{
+            "/":{
+                "match":"exact"
+            },
+            "/home":{
+                "match":"prefix"
+            },
+            "/guide":{
+                "match":"prefix"
+            },
+            "/users":{
+                "match":"prefix"
+            },
+            "**/**":{
+                "match":"prefix"
+            },
+            "/list":{
+                "match":"prefix"
+            }
+        }
+    },
+    "static.ignore":[
+        "^\/icons\/.*s"
+    ],
+    "external":{
+        "urls":[
+            {
+                "url":"https://fonts.googleapis.com/icon?family=Material+Icons"
+            },
+            {
+                "url":"https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2"
+            }
+        ]
+    },
+    "dynamic": {
+        "group": [
+            {
+                "name": "api",
+                "urls": {
+                    "https://rafiki-app-bda3a.web.app/**": {
+                        "match": "prefix"
+                    }
+                },
+                "cache": {
+                    "optimizeFor": "freshness",
+                    "networkTimeoutMs": 1000,
+                    "maxEntries": 30,
+                    "strategy": "lru",
+                    "maxAgeMs": 360000000
+                }
+            }
+        ]
+    }
+}

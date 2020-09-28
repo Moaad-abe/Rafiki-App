@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <h1>Rafiki App</h1>
+</mat-toolbar>
+<mat-card>
+  <div class="ui negative message" *ngIf="error">
+    {{ error }}
+  </div>
+  <form #form="ngForm" (submit)=onSubmit(form) [class.loading]="loading">
+    <div class="two fields" *ngIf="isSignUp">
+      <mat-form-field class="full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" name="firstName" placeholder="First Name" ngModel>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" name="lastName" placeholder="Last Name" ngModel>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Enter your email</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="email" placeholder="pat@example.com" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="password" placeholder="Password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <div class="actions">
+      <button mat-flat-button type="submit" color="primary">
+        {{ action | uppercase}}</button>
+
+      <span *ngIf="isLogin">
+        or
+        <a href="#" (click)="action = 'signup'"> Sign Up</a>
+      </span>
+      <span *ngIf="isSignUp">
+        or
+        <a href="#" (click)="action = 'login'"> Login</a>
+      </span>
+    </div>
+  </form>
+</mat-card>

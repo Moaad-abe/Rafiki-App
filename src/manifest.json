@@ -1,0 +1,32 @@
+{
+    "name":"Rafiki App",
+    "start_url": "/",
+    "orientation": "any",
+    "scope": "/",
+    "display":"standalone",
+    "short_name": "Rafiki App",
+    "theme_color": "#472D21",
+    "background_color": "#C0B764",
+    "icons": [
+        {
+            "src":"icons/favicon-96x96.png",
+            "sizes":"96x96"
+        },
+        {
+            "src":"icons/apple-icon-180x180.png",
+            "sizes":"180x180"
+        },
+        {
+            "src":"icons/apple-icon-120x120.png",
+            "sizes":"120x120"
+        },
+        {
+            "src":"icons/android-icon-144x144.png",
+            "sizes":"144x144"
+        },
+        {
+            "src":"icons/logo-512x512.png",
+            "sizes":"512x512"
+        }
+    ]
+}

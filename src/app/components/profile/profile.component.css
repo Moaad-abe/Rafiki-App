@@ -1,0 +1,25 @@
+
+  .file-input{
+    display: none;
+  }
+  .upload-button {
+    margin-top: 1px;
+  }
+  mat-card {
+    margin: 10px;
+  }
+  .profile-image {
+    max-width: 400px;
+  }
+  .header-image {
+    background-size: cover;
+  }
+  .ui-image {
+    padding: 20px;
+  }
+  .user-title {
+    padding: 5px;
+  }
+  mat-form-field{
+    width: 100%;
+  }
