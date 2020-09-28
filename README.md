@@ -12,7 +12,7 @@ Then run ng serve to start a dev server. Navigate to http://localhost:4200/. The
 
 Please support this project by simply putting a Github star ⭐. 🙏 Thanks
 ## Online Demo
-![alt text](https://rafiki-app-bda3a.web.app/)
+You can try the online demo ![here](https://rafiki-app-bda3a.web.app/).
 
 ## Code scaffolding
 
