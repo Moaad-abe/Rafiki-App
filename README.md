@@ -1,7 +1,7 @@
 # RafikiApp
 
-This project is part of Final Project in Emek Yizrael College 
-Guided by D.Iyad soliman 
+This project is part of Final Project in Emek Yizrael College ,
+Guided by D.Iyad soliman ,
 Students: Moaad Abed Ellatife & Fadi Shuhibar
 
 ## Development server (Installation)
