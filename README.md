@@ -18,7 +18,8 @@ You can try the online demo [here](https://rafiki-app-bda3a.web.app/).
 ![3](https://user-images.githubusercontent.com/60063275/94420877-716e4280-018d-11eb-983a-8a1802ce0eff.png)
 ![1](https://user-images.githubusercontent.com/60063275/94420882-729f6f80-018d-11eb-8789-f14a4ab5ed7a.png)
 
-## Admin permission
+## Admin Permissions
+Manager can edit users
 ![4](https://user-images.githubusercontent.com/60063275/94420880-7206d900-018d-11eb-9a13-d347b9ddd4b4.png)
 ## Code scaffolding
 
