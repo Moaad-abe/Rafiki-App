@@ -9,10 +9,7 @@ Students: Moaad Abed Ellatife & Fadi Shuhibar
 Run npm install to install all the required dependencies
 
 Then run ng serve to start a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-![alt text](https://ibb.co/YpkDXMD)
-https://ibb.co/CMTVw4v
-https://ibb.co/q5RZfSd
-https://ibb.co/dJpFtz9
+![1](https://user-images.githubusercontent.com/60063275/94420882-729f6f80-018d-11eb-8789-f14a4ab5ed7a.png)
 
 Please support this project by simply putting a Github star ⭐. 🙏 Thanks
 ## Online Demo
